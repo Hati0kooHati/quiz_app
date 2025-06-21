@@ -16,7 +16,7 @@ class ResultScreen extends StatelessWidget {
           Text(
             "Correct answers $correctAnswersCount out of ${questions.length}",
             style: TextStyle(
-              color:  const Color.fromARGB(255, 6, 118, 143),
+              color: const Color.fromARGB(255, 255, 255, 255),
               fontSize: 55.0,
             ),
             textAlign: TextAlign.center,
@@ -58,7 +58,6 @@ class ResultScreen extends StatelessWidget {
                         Row(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            
                             Container(
                               margin: EdgeInsets.all(3.0),
                               height: 40.0,
@@ -69,27 +68,54 @@ class ResultScreen extends StatelessWidget {
                                     : const Color.fromARGB(255, 192, 21, 9),
                                 borderRadius: BorderRadius.circular(20.0),
                               ),
-                              child: Center(child: Text("${index + 1}", style: TextStyle(fontSize: 22.0),)),
+                              child: Center(
+                                child: Text(
+                                  "${index + 1}",
+                                  style: TextStyle(fontSize: 22.0),
+                                ),
+                              ),
                             ),
 
                             Expanded(
                               child: Column(
                                 children: [
-                                  Text(question, style: TextStyle(fontSize: 17.0, color: Colors.black), textAlign: TextAlign.center,),
+                                  Text(
+                                    question,
+                                    style: TextStyle(
+                                      fontSize: 17.0,
+                                      color: Colors.black,
+                                    ),
+                                    textAlign: TextAlign.center,
+                                  ),
                                   Text(
                                     correctAnswer,
                                     style: TextStyle(
-                                      color: const Color.fromARGB(255, 112, 234, 145),
-                                      fontSize: 17.0
+                                      color: const Color.fromARGB(
+                                        255,
+                                        112,
+                                        234,
+                                        145,
+                                      ),
+                                      fontSize: 17.0,
                                     ),
                                   ),
                                   Text(
                                     tappedAnswer,
                                     style: TextStyle(
                                       color: isCorrect
-                                          ? const Color.fromARGB(255, 112, 234, 145)
-                                          : const Color.fromARGB(255, 237, 46, 33),
-                                      fontSize: 17.0
+                                          ? const Color.fromARGB(
+                                              255,
+                                              112,
+                                              234,
+                                              145,
+                                            )
+                                          : const Color.fromARGB(
+                                              255,
+                                              237,
+                                              46,
+                                              33,
+                                            ),
+                                      fontSize: 17.0,
                                     ),
                                   ),
                                 ],
@@ -105,10 +131,18 @@ class ResultScreen extends StatelessWidget {
             ),
           ),
 
+          SizedBox(height: 30.0,),
+
           ElevatedButton(
             onPressed: () {
               resturnQuizFn(context);
             },
+
+            style: ElevatedButton.styleFrom(
+              backgroundColor: const Color.fromARGB(255, 8, 10, 115),
+              shadowColor: const Color.fromARGB(255, 21, 5, 112),
+              minimumSize: Size(200, 50),
+            ),
             child: Text("Try again"),
           ),
 
