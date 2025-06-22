@@ -5,9 +5,8 @@ class Question {
   final List<String> answers;
 
   List<String> get shuffledAnswers {
-    List<String> shuffledAnswers = [];
-
-    shuffledAnswers.addAll(answers);
+    List<String> shuffledAnswers = List.of(answers);
+    
     shuffledAnswers.shuffle();
     
     return shuffledAnswers;
